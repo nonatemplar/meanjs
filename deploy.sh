@@ -130,7 +130,7 @@ fi
 # 5. Run Gulp Task
 if [ -e "$DEPLOYMENT_TARGET/gulpfile.js" ]; then
   cd "$DEPLOYMENT_TARGET"
-  eval $NPM_CMD start
+  eval ./node_modules/.bin/gulp prod
   exitWithMessageOnError "gulp failed"
   cd - > /dev/null
 fi
