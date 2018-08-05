@@ -23,6 +23,24 @@ var CategorySchema = new Schema({
   user: {
     type: Schema.ObjectId,
     ref: 'User'
+  },
+  id: {
+    type: String,
+    required: [true, 'id is required.']
+  },
+  description: {
+    type: String
+  },
+  avatar: {
+    type: String
+  },
+  items: [{
+    type: String
+  }],
+  _createdBy: {
+    type: Schema.Types.ObjectId,
+    ref: 'User',
+    required: [true, 'Blog created by is required.']
   }
 });
 
