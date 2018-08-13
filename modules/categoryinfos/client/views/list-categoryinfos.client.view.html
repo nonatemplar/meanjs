@@ -1,0 +1,22 @@
+<section>
+  <div class="page-header">
+    <h1>Measure Catgory Info</h1>
+  </div>
+  <div class="list-group">
+    <a ng-repeat="categoryinfo in vm.categoryinfos"
+       ui-sref="categoryinfos.view({ categoryinfoId: categoryinfo._id })"
+       class="list-group-item">
+      <small class="list-group-item-text">
+        Posted on
+        <span ng-bind="categoryinfo.created | date:'mediumDate'"></span>
+        by
+        <span ng-if="categoryinfo.user" ng-bind="categoryinfo.user.displayName"></span>
+        <span ng-if="!categoryinfo.user">Deleted User</span>
+      </small>
+      <h4 class="list-group-item-heading" ng-bind="categoryinfo.name"></h4>
+    </a>
+  </div>
+  <div class="alert alert-warning text-center" ng-if="vm.categoryinfos.$resolved && !vm.categoryinfos.length">
+    No Categoryinfos yet, why don't you <a ui-sref="categoryinfos.create">create one</a>?
+  </div>
+</section>

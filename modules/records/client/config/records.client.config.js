@@ -2,7 +2,7 @@
   'use strict';
 
   angular
-    .module('items')
+    .module('records')
     .run(menuConfig);
 
   menuConfig.$inject = ['menuService'];
@@ -10,22 +10,22 @@
   function menuConfig(menuService) {
     // Set top bar menu items
     menuService.addMenuItem('topbar', {
-      title: 'Measure Items',
-      state: 'items',
+      title: 'Measure Records',
+      state: 'records',
       type: 'dropdown',
       roles: ['*']
     });
 
     // Add the dropdown list item
-    menuService.addSubMenuItem('topbar', 'items', {
-      title: 'List Items',
-      state: 'items.list'
+    menuService.addSubMenuItem('topbar', 'records', {
+      title: 'List Records',
+      state: 'records.list'
     });
 
     // Add the dropdown create item
-    menuService.addSubMenuItem('topbar', 'items', {
-      title: 'Create Item',
-      state: 'items.create',
+    menuService.addSubMenuItem('topbar', 'records', {
+      title: 'Create Record',
+      state: 'records.create',
       roles: ['user']
     });
   }

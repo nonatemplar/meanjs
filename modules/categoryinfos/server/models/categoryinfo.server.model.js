@@ -7,28 +7,22 @@ var mongoose = require('mongoose'),
   Schema = mongoose.Schema;
 
 /**
- * Item Schema
+ * Categoryinfo Schema
  */
-var ItemSchema = new Schema({
+var CategoryinfoSchema = new Schema({
   name: {
     type: String,
-    default: '',
-    required: 'Please fill Item Name'
-  },
-  pic: {
-    type: String,
-    default: '',
-    trim: true
-  },
-  help_pic: {
-    type: String,
-    default: ''
+    required: 'Please fill Category Name'
   },
   desc: {
     type: String,
     default: ''
   },
-  direction: {
+  pic: {
+    type: String,
+    default: ''
+  },
+  item_ids: {
     type: String,
     default: ''
   },
@@ -38,4 +32,4 @@ var ItemSchema = new Schema({
   }
 });
 
-mongoose.model('Item', ItemSchema);
+mongoose.model('Categoryinfo', CategoryinfoSchema);
