@@ -33,7 +33,7 @@ var UserinfoSchema = new Schema({
   },
   BIRTH: {
     type: Date,
-    required: 'Please fill birth date',
+    required: 'Please fill birth date'
   },
   SEX: {
     type: String,
